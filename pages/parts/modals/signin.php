@@ -26,7 +26,7 @@
             <input type="text" class="form-control" name="signInPassword">
         </div>
 
-        <input type="submit" class="btn btn-success form-control" value="Sign Up">
+        <input type="submit" class="btn btn-success form-control" value="Sign In">
     </form>
 </div>
 </div>

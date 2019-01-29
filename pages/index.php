@@ -9,13 +9,13 @@
     ?>
 </head>
 <body class="bg-light">
-    <!-- Header -->
-    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/pageheader.php"); ?>
+    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/pageheader.php"); // Header ?>
 
     <div class="container mt-3">
         <div class="row">
             <div class="col">
                 <h1>Welcome to JAE</h1>
+                <?php echo password_hash("0000", PASSWORD_DEFAULT); ?>
             </div>
         </div>
 
