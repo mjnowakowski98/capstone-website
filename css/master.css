@@ -1,0 +1,4 @@
+.panel-overflow {
+    max-height:700px;
+    overflow:auto;
+}
