@@ -11,21 +11,22 @@
 </div>
 
 <div class="modal-body">
-    <form action="#" method="POST">
+    <form action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="POST">
         <div class="input-group mb-1">
             <div class="input-group-prepend">
                 <span class="input-group-text">Username</span>
             </div>
-            <input type="text" class="form-control" name="signInUserName">
+            <input type="text" class="form-control" name="signInUsername">
         </div>
 
         <div class="input-group mb-1">
             <div class="input-group-prepend">
                 <span class="input-group-text">Password</span>
             </div>
-            <input type="text" class="form-control" name="signInPassword">
+            <input type="password" class="form-control" name="signInPassword">
         </div>
 
+        <input type="hidden" name="masterAction" value="signIn">
         <input type="submit" class="btn btn-success form-control" value="Sign In">
     </form>
 </div>

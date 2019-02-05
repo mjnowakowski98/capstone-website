@@ -24,7 +24,7 @@
                 <h2>Featured Content</h2>
                 <hr>
 
-                <?php // Generate featured content from DB ?>
+                <?php echo $sessionUserId; // Generate featured content from DB ?>
             </div>
 
             <div class="col-4">
