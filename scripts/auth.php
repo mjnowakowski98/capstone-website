@@ -5,15 +5,15 @@
 
         try {
             $sql  = "CALL GetUserIdByEmail(:email, @userId);";
-            $sql .= " SELECT @userId AS userId;";
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':email', $email);
             $stmt->execute();
-            echo $stmt->rowCount;
-            if(!$stmt->rowCount()) return $validSignIn;
+
+            $stmt = $db->query("SELECT @userId");
 
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
-            $userId = $results["userId"];
+            $userId = $results["@userId"];
+            if($userId <= 0) return $validSignIn;
 
             $sql  = "CALL GetUserCredentials(:userId);";
             $stmt = $db->prepare($sql);
@@ -22,9 +22,17 @@
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
 
             if(password_verify($password, $results["user_passhash"])) {
+                $sql = "CALL GetUserStates(:userId);";
+                $stmt = $db->prepare($sql);
+                $stmt->bindParam(':userId', $userId);
+                $stmt->execute();
+                $results = $stmt->fetch(PDO::FETCH_ASSOC);
+                if($results["user_disabled"]) return $validSignIn;
+
                 $validSignIn = true;
                 $_SESSION["userId"] = $userId;
-                $_SESSION["loginState"] = "basic-user";
+                if($results["user_isadmin"]) $_SESSION["loginState"] = "admin-user";
+                else $_SESSION["loginState"] = "basic-user";
             }
 
         } catch(PDOException $e) { die($e->getMessage()); }

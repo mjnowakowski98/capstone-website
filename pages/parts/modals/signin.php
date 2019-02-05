@@ -23,7 +23,7 @@
         }
     ?>
 
-    <form method="POST">
+    <form action="<?php echo str_replace("//", "/", $_SERVER["PHP_SELF"]); ?>" method="POST">
         <div class="input-group mb-1">
             <div class="input-group-prepend">
                 <span class="input-group-text">Email</span>
