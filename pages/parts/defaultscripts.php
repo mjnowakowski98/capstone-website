@@ -5,3 +5,4 @@
 
 <!-- UI Scripts -->
 <script src="/jsscripts/toggleauthitems.js"></script>
+<script src="/jsscripts/master.js"></script>

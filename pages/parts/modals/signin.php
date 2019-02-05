@@ -11,12 +11,24 @@
 </div>
 
 <div class="modal-body">
+    <?php
+        $loginSuccess = (isset($loginSuccess)) ? $loginSuccess : true;
+        if(!$loginSuccess) {
+            $doc = new DOMDocument();
+            $pTag = $doc->createElement("p");
+            $pTag->setAttribute("class", "text-danger");
+            $pTag->appendChild($doc->createTextNode("Username or password is incorrect"));
+            $doc->appendChild($pTag);
+            echo $doc->saveHTML();
+        }
+    ?>
+
     <form method="POST">
         <div class="input-group mb-1">
             <div class="input-group-prepend">
-                <span class="input-group-text">Username</span>
+                <span class="input-group-text">Email</span>
             </div>
-            <input type="text" class="form-control" name="signInUsername">
+            <input type="text" class="form-control" name="signInEmail">
         </div>
 
         <div class="input-group mb-1">

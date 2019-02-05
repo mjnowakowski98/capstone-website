@@ -1,11 +1,14 @@
 <?php
     session_start();
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/dbcontroller.php");
     include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/auth.php");
 
+    $pageAction = "none";
     $masteraction = isset($_REQUEST["masterAction"]) ? $_REQUEST["masterAction"] : null;
     switch($masteraction) {
         case "signIn":
-            signIn($_REQUEST["signInUsername"], $_REQUEST["signInPassword"]);
+            $loginSuccess = signIn($_REQUEST["signInEmail"], $_REQUEST["signInPassword"]);
+            if(!$loginSuccess) $pageAction = "signInFailed";
             break;
 
         case "signOut":

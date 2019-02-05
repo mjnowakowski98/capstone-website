@@ -8,7 +8,7 @@
         include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/defaulthead.php");
     ?>
 </head>
-<body class="bg-light" data-login-state="<?php echo $sessionLoginState; ?>">
+<body class="bg-light" data-login-state="<?php echo $sessionLoginState; ?>" data-page-action="<?php echo $pageAction; ?>">
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/pageheader.php"); // Header ?>
 
     <div class="container mt-3">
