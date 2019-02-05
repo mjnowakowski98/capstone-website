@@ -8,14 +8,13 @@
         include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/defaulthead.php");
     ?>
 </head>
-<body class="bg-light">
+<body class="bg-light" data-login-state="<?php echo $sessionLoginState; ?>">
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/pageheader.php"); // Header ?>
 
     <div class="container mt-3">
         <div class="row">
             <div class="col">
                 <h1>Welcome to JAE</h1>
-                <?php echo password_hash("0000", PASSWORD_DEFAULT); ?>
             </div>
         </div>
 
@@ -24,11 +23,11 @@
                 <h2>Featured Content</h2>
                 <hr>
 
-                <?php echo $sessionUserId; // Generate featured content from DB ?>
+                <?php // Generate featured content from DB ?>
             </div>
 
             <div class="col-4">
-                
+                <h2>Session UserId: <?php echo $sessionUserId; ?></h2>
             </div>
         </div>
     </div>

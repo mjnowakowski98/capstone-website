@@ -1,13 +1,11 @@
 <?php
     function signIn($username, $password) {
-        global $sessionUserId;
-        $sessionUserId = 1;
-        $_SESSION["userId"] = $sessionUserId;
+        $_SESSION["userId"] = 1;
+        $_SESSION["loginState"] = "admin-user";
     }
 
     function signOut() {
-        global $sessionUserId;
-        $sessionUserId = -1;
-        $_SESSION["userId"] = $sessionUserId;
+        $_SESSION["userId"] = -1;
+        $_SESSION["loginState"] = "no-user";
     }
 ?>

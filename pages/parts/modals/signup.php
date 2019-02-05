@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary ml-2 no-user" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
+<button type="button" class="btn btn-primary ml-2 no-user d-none" data-toggle="modal" data-target="#signUpModal">Sign Up</button>
 
 <div id="signUpModal" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog" role="document">

@@ -1,4 +1,4 @@
-<button type="button" class="btn btn-primary ml-2 no-user" data-toggle="modal" data-target="#signInModal">Sign In</button>
+<button type="button" class="btn btn-primary ml-2 no-user d-none" data-toggle="modal" data-target="#signInModal">Sign In</button>
 
 <div id="signInModal" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog" role="document">
@@ -11,7 +11,7 @@
 </div>
 
 <div class="modal-body">
-    <form action="<?php echo $_SERVER["SCRIPT_NAME"]; ?>" method="POST">
+    <form method="POST">
         <div class="input-group mb-1">
             <div class="input-group-prepend">
                 <span class="input-group-text">Username</span>
