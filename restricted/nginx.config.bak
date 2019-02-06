@@ -45,37 +45,26 @@ server {
 
 	server_name localhost;
 
+	location = / {
+		rewrite / /pages/index.php last;
+	}
+
 	location / {
-		try_files /pages/$uri /pages/$uri/ =404;
-	}
-
-	location /css {
-		try_files $uri =404;
-	}
-
-	location /jsscripts {
-		try_files $uri =404;
+		rewrite ^/(.\.php*)$ /pages/$1 last;
+		try_files $uri $uri/ =404;
 	}
 
 	location /pages/ {
-		# First attempt to serve request as file, then
-		# as directory, then fall back to displaying a 404.
-		try_files $uri =404;
+		try_files $uri $uri/ =404;
 	}
 
 	location /phpmyadmin/ {
 		try_files $uri $uri/ =404;
 	}
 
-	# pass PHP scripts to FastCGI server
-	#
-	location ~ \.php$ {
+	location ~ \.php {
 		include snippets/fastcgi-php.conf;
-	#
-	#	# With php-fpm (or other unix sockets):
 		fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
-	#	# With php-cgi (or other tcp sockets):
-	#	fastcgi_pass 127.0.0.1:9000;
 	}
 
 	# deny access to .htaccess files, if Apache's document root
@@ -85,23 +74,3 @@ server {
 		deny all;
 	}
 }
-
-
-# Virtual Host configuration for example.com
-#
-# You can move that to a different file under sites-available/ and symlink that
-# to sites-enabled/ to enable it.
-#
-#server {
-#	listen 80;
-#	listen [::]:80;
-#
-#	server_name example.com;
-#
-#	root /var/www/example.com;
-#	index index.html;
-#
-#	location / {
-#		try_files $uri $uri/ =404;
-#	}
-#}
