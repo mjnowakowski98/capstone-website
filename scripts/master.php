@@ -1,6 +1,6 @@
 <?php
     session_start();
-    include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/dbcontroller.php");
+    include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/dbconnection.php");
     include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/auth.php");
 
     $pageAction = "none";
