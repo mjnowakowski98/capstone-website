@@ -30,14 +30,13 @@
         $validSignUp = false;
 
         try {
-            $sql = "CALL CreateNewUser(:username, :email, :passHash);";
+            $sql = "CALL CreateNewAccount(:username, :email, :passHash);";
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':username', $username);
             $stmt->bindParam(':email', $email);
             $stmt->bindParam(':passHash', password_hash($password, PASSWORD_DEFAULT));
             $stmt->execute();
             $validSignUp = ($stmt->rowCount() == 1);
-            if(!$validSignUp) die("FAILED");
         } catch(PDOException $e) { die($e->getMessage()); }
 
         return $validSignUp;
