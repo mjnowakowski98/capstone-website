@@ -17,7 +17,7 @@
             if(password_verify($password, $results["passHash"])) {
                 $validSignIn = true;
                 $_SESSION["userId"] = $userId;
-                if($results["isAdmin"]) $_SESSION["loginState"] = "admin-user";
+                if($results["adminId"]) $_SESSION["loginState"] = "admin-user";
                 else $_SESSION["loginState"] = "basic-user";
             }
 

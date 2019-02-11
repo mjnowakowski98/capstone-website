@@ -25,11 +25,11 @@
                 <hr>
 
                 <?php // Generate featured content from DB ?>
+                <h2>Session UserId: <?php echo $sessionUserId; ?></h2>
             </div>
 
             <div class="col-4">
-                <h2>Session UserId: <?php echo $sessionUserId; ?></h2>
-                <p>0000 Hash: <?php echo password_hash("0000", PASSWORD_DEFAULT); ?></p>
+                <!-- Free space -->
             </div>
         </div>
     </div>

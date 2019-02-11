@@ -23,7 +23,7 @@ BEGIN
     INSERT INTO Users (
         user_username, user_email, user_passhash,
         user_isdisabled, user_ispublic, user_createddate, user_profileimage
-    ) VALUES (_user_username, _user_email, _user_passhash, 0, 0, NOW(), NULL);
+    ) VALUES (_user_username, _user_email, _user_passhash, 0, 0, CURDATE(), NULL);
 END //
 
 DELIMITER ;
