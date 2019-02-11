@@ -5,8 +5,11 @@ function executePageAction() {
             $("#signInModal").modal("show");
             break;
 
-        default:
+        case "singUpFailed":
             $("#signUpModal").modal("show");
+            break;
+
+        default:
             break;
     }
 }
