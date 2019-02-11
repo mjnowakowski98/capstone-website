@@ -59,6 +59,7 @@
             <input type="password" class="form-control" name="signUpConfirmPassword">
         </div>
 
+        <input type="hidden" name="masterAction" value="signUp">
         <input type="submit" class="btn btn-success form-control" value="Sign Up">
     </form>
 </div>
