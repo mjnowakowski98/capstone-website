@@ -11,7 +11,7 @@
 </div>
 
 <div class="modal-body">
-    <form action="#" method="POST">
+    <form action="<?php echo str_replace("//", "/", $_SERVER["PHP_SELF"]); ?>" method="POST">
         <div class="input-group mb-1">
             <div class="input-group-prepend">
                 <span class="input-group-text">Username</span>
@@ -37,14 +37,14 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">Password</span>
             </div>
-            <input type="text" class="form-control" name="signUpPassword">
+            <input type="password" class="form-control" name="signUpPassword">
         </div>
 
         <div class="input-group mb-1">
             <div class="input-group-prepend">
                 <span class="input-group-text">Confirm password</span>
             </div>
-            <input type="text" class="form-control" name="signUpConfirmPassword">
+            <input type="password" class="form-control" name="signUpConfirmPassword">
         </div>
 
         <input type="submit" class="btn btn-success form-control" value="Sign Up">
