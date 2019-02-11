@@ -4,40 +4,43 @@
         $validSignIn = false;
 
         try {
-            $sql  = "CALL GetUserIdByEmail(:email, @userId);";
+            $sql  = "CALL ValidateLogin(:email);";
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':email', $email);
             $stmt->execute();
 
-            $stmt = $db->query("SELECT @userId");
-
             $results = $stmt->fetch(PDO::FETCH_ASSOC);
-            $userId = $results["@userId"];
-            if($userId <= 0) return $validSignIn;
+            $userId = $results["userId"];
+            $userDisabled = $results["isDisabled"];
+            if(!$userId || $userDisabled) return $validSignIn;
 
-            $sql  = "CALL GetUserCredentials(:userId);";
-            $stmt = $db->prepare($sql);
-            $stmt->bindParam(':userId', $userId);
-            $stmt->execute();
-            $results = $stmt->fetch(PDO::FETCH_ASSOC);
-
-            if(password_verify($password, $results["user_passhash"])) {
-                $sql = "CALL GetUserStates(:userId);";
-                $stmt = $db->prepare($sql);
-                $stmt->bindParam(':userId', $userId);
-                $stmt->execute();
-                $results = $stmt->fetch(PDO::FETCH_ASSOC);
-                if($results["user_disabled"]) return $validSignIn;
-
+            if(password_verify($password, $results["passHash"])) {
                 $validSignIn = true;
                 $_SESSION["userId"] = $userId;
-                if($results["user_isadmin"]) $_SESSION["loginState"] = "admin-user";
+                if($results["isAdmin"]) $_SESSION["loginState"] = "admin-user";
                 else $_SESSION["loginState"] = "basic-user";
             }
 
         } catch(PDOException $e) { die($e->getMessage()); }
-
         return $validSignIn;
+    }
+
+    function signUp($username, $email, $password) {
+        global $db;
+        $validSignUp = false;
+
+        try {
+            $sql = "CALL CreateNewUser(:username, :email, :passHash);";
+            $stmt = $db->prepare($sql);
+            $stmt->bindParam(':username', $username);
+            $stmt->bindParam(':email', $email);
+            $stmt->bindParam(':passHash', password_hash($password, PASSWORD_DEFAULT));
+            $stmt->execute();
+            $validSignUp = ($stmt->rowCount() == 1);
+            if(!$validSignUp) die("FAILED");
+        } catch(PDOException $e) { die($e->getMessage()); }
+
+        return $validSignUp;
     }
 
     function signOut() {
