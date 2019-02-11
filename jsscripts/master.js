@@ -5,7 +5,7 @@ function executePageAction() {
             $("#signInModal").modal("show");
             break;
 
-        case "singUpFailed":
+        case "signUpFailed":
             $("#signUpModal").modal("show");
             break;
 
