@@ -16,7 +16,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">Username</span>
             </div>
-            <input type="text" class="form-control" name="signUpUserName">
+            <input type="text" class="form-control" name="signUpUsername">
         </div>
 
         <div class="input-group mb-1">
@@ -30,7 +30,7 @@
             <div class="input-group-prepend">
                 <span class="input-group-text">Confirm email</span>
             </div>
-            <input type="text" class="form-control" name="signUpUConfirmEmail">
+            <input type="text" class="form-control" name="signUpConfirmEmail">
         </div>
 
         <div class="input-group mb-1">
