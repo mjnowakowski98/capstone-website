@@ -6,6 +6,7 @@ function executePageAction() {
             break;
 
         default:
+            $("#signUpModal").modal("show");
             break;
     }
 }

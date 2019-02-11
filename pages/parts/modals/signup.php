@@ -11,6 +11,18 @@
 </div>
 
 <div class="modal-body">
+    <?php
+        $signUpSuccess = (isset($signUpSuccess)) ? $signUpSuccess : true;
+        if(!$signUpSuccess) {
+            $doc = new DOMDocument();
+            $pTag = $doc->createElement("p");
+            $pTag->setAttribute("class", "text-danger");
+            $pTag->appendChild($doc->createTextNode("Something went wrong, try again later"));
+            $doc->appendChild($pTag);
+            echo $doc->saveHTML();
+        }
+    ?>
+
     <form action="<?php echo str_replace("//", "/", $_SERVER["PHP_SELF"]); ?>" method="POST">
         <div class="input-group mb-1">
             <div class="input-group-prepend">
