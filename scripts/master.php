@@ -13,7 +13,7 @@
 
         case "signUp":
             $signUpSuccess = signUp($_REQUEST["signUpUsername"], $_REQUEST["signUpEmail"], $_REQUEST["signUpPassword"]);
-            if(!$signUpSuccess) $pageAction = "singUpFailed";
+            if(!$signUpSuccess) $pageAction = "signUpFailed";
             break;
 
         case "signOut":
