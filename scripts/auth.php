@@ -28,13 +28,14 @@
     function signUp($username, $email, $password) {
         global $db;
         $validSignUp = false;
+        $passHash = password_hash($password, PASSWORD_DEFAULT);
 
         try {
             $sql = "CALL CreateNewAccount(:username, :email, :passHash);";
             $stmt = $db->prepare($sql);
             $stmt->bindParam(':username', $username);
             $stmt->bindParam(':email', $email);
-            $stmt->bindParam(':passHash', password_hash($password, PASSWORD_DEFAULT));
+            $stmt->bindParam(':passHash', $passHash);
             $stmt->execute();
             $validSignUp = ($stmt->rowCount() == 1);
         } catch(PDOException $e) { die($e->getMessage()); }
