@@ -1,3 +1,5 @@
+<!-- TEMPLATE -->
+
 <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/scripts/master.php"); ?>
 
 <!DOCTYPE html>
@@ -12,7 +14,7 @@
 <body class="bg-light" data-login-state="<?php echo $sessionLoginState; ?>" data-page-action="<?php echo $pageAction; ?>">
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/pageheader.php"); // Header ?>
 
-    <div class="container mt-3">
+    <div class="container my-3">
         <!-- Content goes here -->
     </div>
 

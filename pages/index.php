@@ -12,7 +12,7 @@
 <body class="bg-light" data-login-state="<?php echo $sessionLoginState; ?>" data-page-action="<?php echo $pageAction; ?>">
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/pageheader.php"); // Header ?>
 
-    <div class="container mt-3">
+    <div class="container my-3">
         <div class="row">
             <div class="col">
                 <h1>Welcome to JAE</h1>
@@ -26,10 +26,6 @@
 
                 <?php // Generate featured content from DB ?>
                 <h2>Session UserId: <?php echo $sessionUserId; ?></h2>
-            </div>
-
-            <div class="col-4">
-                <!-- Free space -->
             </div>
         </div>
     </div>
