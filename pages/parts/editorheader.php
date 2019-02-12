@@ -1,4 +1,4 @@
-<header class="container bg-dark">
+<header class="container-fluid bg-dark">
     <nav class="row navbar navbar-dark">
         <div class="col-2 d-flex flex-row">
             <button type="button" class="btn navbar-brand">JAE</button>
@@ -15,4 +15,15 @@
             <a href="?masterAction=signOut" class="btn btn-secondary ml-2 basic-user admin-user d-none">Sign Out</a>
         </div>
     </nav>
+    <hr class="bg-light my-0">
+
+    <div class="row">
+        <span class="col-9 py-1">
+            <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/modals/saveanimation.php"); ?>
+        </span>
+
+        <span class="marquee-container col-3 py-1 text-nowrap">
+            <h1 id="animationTitle" class="mb-1">Untitled Animation</h1> 
+        </span>
+    </div>
 </header>
