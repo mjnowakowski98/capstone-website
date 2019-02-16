@@ -9,6 +9,8 @@ function executePageAction() {
             $("#signUpModal").modal("show");
             break;
 
+        
+
         default:
             break;
     }

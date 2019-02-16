@@ -20,6 +20,9 @@
             signOut();
             break;
 
+        case "searchAnimations":
+            break;
+
         default:
             break;
     }

@@ -1,6 +1,6 @@
 <button type="button" class="btn btn-primary ml-2 no-user d-none" data-toggle="modal" data-target="#signInModal">Sign In</button>
 
-<div style="position:static;" id="signInModal" class="modal fade" tabindex="-1" role="dialog">
+<div id="signInModal" class="modal fade" tabindex="-1" role="dialog">
 <div class="modal-dialog" role="document">
 <div class="modal-content">
 <div class="modal-header">

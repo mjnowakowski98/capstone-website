@@ -5,14 +5,14 @@
 <head>
     <?php // Page head
         $pageTitle = "JAE - Editor";
-        include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/defaulthead.php");
+        include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/head/defaulthead.php");
     ?>
 
     <link href="/css/editor.css" type="text/css" rel="stylesheet">
 </head>
 
 <body class="bg-light" data-login-state="<?php echo $sessionLoginState; ?>" data-page-action="<?php echo $pageAction; ?>">
-    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/editorheader.php"); // Header ?>
+    <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/headers/editorheader.php"); // Header ?>
 
     <div class="container-fluid my-3">
         <div class="row">
@@ -24,7 +24,7 @@
 
     <?php
         // Scripts
-        include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/defaultscripts.php");
+        include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/head/defaultscripts.php");
     ?>
     
 </body>
