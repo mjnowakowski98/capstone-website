@@ -27,9 +27,9 @@
         <div class="input-group-prepend">
             <span class="input-group-text">Title</span>
         </div>
-        <input type="text" id="saveAnimationTitle" class="form-control" name="animationTitle">
+        <input type="text" id="loadAnimationTitle" class="form-control" name="animationTitle">
         <div class="input-group-append">
-            <button type="button" id="saveAnimation" class="btn btn-success" data-dismiss="modal">Load</button>
+            <button type="button" id="loadAnimation" class="btn btn-success" data-dismiss="modal">Load</button>
         </div>
     </div>
     <hr>

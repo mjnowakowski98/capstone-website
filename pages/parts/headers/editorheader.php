@@ -1,8 +1,7 @@
 <header class="container-fluid bg-dark">
     <nav class="row navbar navbar-dark">
         <div class="col-2 d-flex flex-row">
-            <button type="button" class="btn navbar-brand">JAE</button>
-            <a href="/" class="btn btn-primary">Home</a>
+            <a href="/" class="btn btn-success navbar-brand">JAE</a>
         </div>
 
         <div class="col d-flex justify-content-end">
@@ -27,7 +26,7 @@
         </span>
 
         <span class="marquee-container col-3 py-1 text-nowrap">
-            <h1 id="animationTitle" class="mb-1">Untitled Animation</h1> 
+            <h1 id="animationTitle" class="text-white mb-1">Untitled Animation</h1> 
         </span>
     </div>
 </header>

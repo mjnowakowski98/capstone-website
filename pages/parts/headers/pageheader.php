@@ -1,8 +1,7 @@
 <header class="container bg-dark">
     <nav class="row navbar navbar-dark">
         <div class="col-2 d-flex flex-row">
-            <button type="button" class="btn navbar-brand">JAE</button>
-            <a href="/" class="btn btn-primary">Home</a>
+            <a href="/" class="btn btn-success navbar-brand">JAE</a>
         </div>
 
         <div class="col d-flex justify-content-end">
