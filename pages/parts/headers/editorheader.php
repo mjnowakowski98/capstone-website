@@ -19,7 +19,11 @@
 
     <div class="row">
         <span class="col-9 py-1">
-            <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/modals/saveanimation.php"); ?>
+            <?php
+                include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/modals/saveanimation.php");
+                include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/modals/loadanimation.php");
+                include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/modals/animationsettings.php");
+            ?>
         </span>
 
         <span class="marquee-container col-3 py-1 text-nowrap">

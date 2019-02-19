@@ -9,13 +9,19 @@ function executePageAction() {
             $("#signUpModal").modal("show");
             break;
 
-        
-
         default:
             break;
     }
 }
 
+function setLoginStateUI() {
+    let loginState = document.querySelector("body").dataset.loginState;
+    let showItems = document.querySelectorAll(`.${loginState}`);
+    for(let i = 0; i < showItems.length; i++)
+        showItems[i].classList.remove("d-none");
+}
+
 addEventListener("load", () => {
+    setLoginStateUI();
     executePageAction();
 });

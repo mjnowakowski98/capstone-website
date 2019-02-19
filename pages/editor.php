@@ -22,6 +22,7 @@
         </div>
     </div>
 
+    <script src="/jsscripts/editor.js"></script>
     <?php
         // Scripts
         include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/head/defaultscripts.php");
