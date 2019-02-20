@@ -27,7 +27,7 @@
 
             <!-- Object viewer -->
             <div class="col-2 m-0 p-0 bg-secondary border-left">
-                <div class="container">
+                <div class="container mt-1">
                     <div class="row">
                         <div class="col d-flex justify-content-around">
                             <button type="button" class="iconbtn btn btn-outline-success comm-addlayer"></button>
