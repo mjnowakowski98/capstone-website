@@ -27,7 +27,14 @@
 
             <!-- Object viewer -->
             <div class="col-2 m-0 p-0 bg-secondary border-left">
-                <!-- Todo -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col d-flex justify-content-around">
+                            <button type="button" class="iconbtn btn btn-outline-success comm-addlayer"></button>
+                            <button type="button" class="iconbtn btn btn-outline-danger comm-removelayer"></button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -61,9 +68,10 @@
         </div>
     </footer>
 
-    <img src="#" class="d-none">
+    <img class="d-none">
 
     <script src="/jsscripts/editor.js"></script>
+    <script src="/jsscripts/commanddescriptor.js"></script>
     <?php
         // Scripts
         include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/head/defaultscripts.php");
