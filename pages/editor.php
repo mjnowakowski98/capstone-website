@@ -15,16 +15,14 @@
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/headers/editorheader.php"); // Header ?>
 
     <!-- Main content -->
-    <div id="editor-contentarea" class="container-fluid my-0">
-        <div class="row border-top border-bottom">
+    <div class="container-fluid border-top border-bottom">
+        <div class="row my-0">
             <!-- Canvas -->
-            <div class="col">
-                <div class="col-10 overflow-auto m-0 p-0">
-                    <canvas class="m-3 border" width="1024" height="720">
-                        <p class="text-danger">Browser not supported</p>
-                        <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas#Browser_compatibility">Get one that does</a>
-                    </canvas>
-                </div>
+            <div id="editor-contentarea" class="col-10  m-0 p-3 overflow-auto">
+                <canvas class="m-0 border" width="800" height="600">
+                    <p class="text-danger">Browser not supported</p>
+                    <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/canvas#Browser_compatibility">Get one that does</a>
+                </canvas>
             </div>
 
             <!-- Object viewer -->
@@ -34,13 +32,36 @@
         </div>
     </div>
 
-    <footer class="container-fluid bg-dark fixed-bottom">
+    <footer class="container-fluid bg-dark mt-0 pt-0">
         <div class="row">
-            <div class="col">
-                <p>TEST</p>
+            <div class="col-2 py-1 d-flex justify-content-around border-right">
+                <button type="button" class="iconbtn btn btn-outline-success"></button>
+                <button type="button" class="iconbtn btn btn-outline-danger"></button>
+            </div>
+
+            <div class="col-10 py-1">
+                <button type="button" class="iconbtn btn btn-outline-primary"></button>
+                <button type="button" class="iconbtn btn btn-outline-primary"></button>
+                <button type="button" class="iconbtn btn btn-outline-primary"></button>
+                <button type="button" class="iconbtn btn btn-outline-primary"></button>
+                <button type="button" class="iconbtn btn btn-outline-primary"></button>
+            </div>
+        </div>
+
+        <div class="row border-top">
+            <div class="col-2 py-1 d-flex justify-content-around border-right">
+                <button type="button" class="iconbtn btn btn-outline-success"></button>
+                <button type="button" class="iconbtn btn btn-outline-success"></button>
+                <button type="button" class="iconbtn btn btn-outline-danger"></button>
+                <button type="button" class="iconbtn btn btn-outline-danger"></button>
+            </div>
+
+            <div class="col-10">
             </div>
         </div>
     </footer>
+
+    <img src="#" class="d-none">
 
     <script src="/jsscripts/editor.js"></script>
     <?php
