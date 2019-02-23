@@ -14,15 +14,6 @@ testComm.addEventListener("click", () => {
     socket.send(JSON.stringify(commDesc));
 });
 
-function onWindowResize() {
-    let headerHeight = document.querySelector("header").clientHeight;
-    let footerHeight = document.querySelector("footer").clientHeight;
-    console.log(headerHeight, footerHeight);
-
-    let contentArea = document.querySelector("#editor-contentarea");
-    contentArea.style.height = (window.innerHeight - 2 - (headerHeight + footerHeight)) + 'px';
-}
-
 function updateCanvas() {
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
     if(bufferImage.src) ctx.drawImage(bufferImage, 0, 0);
@@ -61,7 +52,4 @@ addEventListener("load", () => {
         console.error(err);
         socket.close();
     });
-
-    onWindowResize();
-    addEventListener("resize", () => onWindowResize());
 });
