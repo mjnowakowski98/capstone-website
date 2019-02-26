@@ -13,7 +13,11 @@
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/pageheader.php"); // Header ?>
 
     <div class="container mt-3">
-        <!-- Content goes here -->
+        <div class="row">
+            <div class="col">
+                
+            </div>
+        </div>
     </div>
 
     <?php
