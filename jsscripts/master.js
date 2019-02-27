@@ -1,3 +1,8 @@
+function showSearchResults() {
+    let resultsArea = document.querySelector(".search-results");
+    resultsArea.classList.remove("d-none");
+}
+
 function executePageAction() {
     let pageAction = document.querySelector("body").dataset.pageAction;
     switch(pageAction) {
@@ -7,6 +12,10 @@ function executePageAction() {
 
         case "signUpFailed":
             $("#signUpModal").modal("show");
+            break;
+
+        case "searchAnimations":
+            showSearchResults();
             break;
 
         default:
