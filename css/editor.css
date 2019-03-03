@@ -3,3 +3,26 @@
     height:38px;
     background-repeat:no-repeat;
 }
+
+.iconbtn-tiny {
+    width:18px;
+    height:18px;
+    padding-left:6px;
+    padding-right:6px;
+    background-repeat:no-repeat;
+}
+
+.framebox-container {
+    overflow-x:auto;
+    overflow-y:hidden;
+    white-space:nowrap;
+}
+
+.framebox {
+    display:inline-block;
+    width:9px;
+    height:100%;
+    margin:0;
+    padding:0;
+    float:none;
+}

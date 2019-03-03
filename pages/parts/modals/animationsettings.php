@@ -38,6 +38,15 @@
         </div>
         <input type="number" class="form-control animation-height">
     </div>
+    <hr>
+
+    <h3>Advanced</h3>
+    <div class="input-group mb-2">
+        <div class="input-group-prepend">
+            <span class="input-group-text">Engine Instance</span>
+        </div>
+        <input type="text" class="form-control" value="ws://localhost/">
+    </div>
 </div>
 </div>
 </div>

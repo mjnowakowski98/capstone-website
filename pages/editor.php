@@ -15,7 +15,8 @@
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/headers/editorheader.php"); // Header ?>
 
     <!-- Main content -->
-    <div class="container-fluid border-top border-bottom">
+    <div class="container-fluid border-t
+    op border-bottom">
         <div class="row my-0">
             <!-- Canvas -->
             <div id="editor-contentarea" class="col-10  m-0 p-3 overflow-auto">
@@ -25,13 +26,22 @@
                 </canvas>
             </div>
 
-            <!-- Object viewer -->
+            <!-- Layers -->
             <div class="col-2 m-0 p-0 bg-secondary border-left">
-                <div class="container mt-1">
+                <div class="container overflow-auto">
+                    <div class="row bg-light border-bottom">
+                        <div class="col">
+                            <p class="my-0">Layers</p>
+                        </div>
+
+                        <div class="col-2">
+                            <button type="button" class="iconbtn-tiny btn btn-outline-success comm-addlayer"></button>
+                        </div>
+                    </div>
+
                     <div class="row">
-                        <div class="col d-flex justify-content-around">
-                            <button type="button" class="iconbtn btn btn-outline-success comm-addlayer"></button>
-                            <button type="button" class="iconbtn btn btn-outline-danger comm-removelayer"></button>
+                        <div class="col">
+                            
                         </div>
                     </div>
                 </div>
@@ -63,15 +73,30 @@
                 <button type="button" class="iconbtn btn btn-outline-danger"></button>
             </div>
 
-            <div class="col-10">
+            <div class="framebox-container col-10 p-0 m-0">
+                
             </div>
         </div>
     </footer>
 
     <img class="d-none">
 
-    <script src="/jsscripts/editor.js"></script>
-    <script src="/jsscripts/commanddescriptor.js"></script>
+    <script src="/jsscripts/editor/commanddescriptor.js"></script>
+    <script src="/jsscripts/editor/editor.js"></script>
+    <script>
+        function onWindowResize() {
+            let headerHeight = document.querySelector("header").clientHeight;
+            let footerHeight = document.querySelector("footer").clientHeight;
+
+            let contentArea = document.querySelector("#editor-contentarea");
+            contentArea.style.height = (window.innerHeight - 1 - (headerHeight + footerHeight)) + 'px';
+        }
+
+        addEventListener("resize", onWindowResize);
+        addEventListener("load", () => {
+            onWindowResize();
+        })
+    </script>
     <?php
         // Scripts
         include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/head/defaultscripts.php");
