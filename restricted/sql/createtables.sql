@@ -23,7 +23,7 @@ CREATE TABLE Administrators (
         ON DELETE CASCADE
 );
 
-CREATE TABLE ReportedUsers (
+/*CREATE TABLE ReportedUsers (
     report_id INT NOT NULL AUTO_INCREMENT,
     user_id INT NOT NULL,
     report_subject VARCHAR(50) NOT NULL,
@@ -35,7 +35,7 @@ CREATE TABLE ReportedUsers (
         REFERENCES Users (user_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
-);
+);*/
 
 CREATE TABLE Animations (
     animation_id INT NOT NULL AUTO_INCREMENT,
@@ -64,7 +64,7 @@ CREATE TABLE FavoritedAnimations (
         ON DELETE CASCADE
 );
 
-CREATE TABLE ReportedAnimations (
+/*CREATE TABLE ReportedAnimations (
     report_id INT NOT NULL AUTO_INCREMENT,
     animation_id INT NOT NULL,
     report_subject VARCHAR(50) NOT NULL,
@@ -76,4 +76,4 @@ CREATE TABLE ReportedAnimations (
         REFERENCES Animations (animation_id)
         ON UPDATE CASCADE
         ON DELETE CASCADE
-);
+);*/

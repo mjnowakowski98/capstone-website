@@ -2,3 +2,7 @@
     max-height:700px;
     overflow:auto;
 }
+
+.bg-label {
+    background-color: #DDDDDD;
+}

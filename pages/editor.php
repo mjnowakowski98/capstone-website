@@ -26,10 +26,10 @@
                 </canvas>
             </div>
 
-            <!-- Layers -->
+            <!-- Layers/Frame Objects -->
             <div class="col-2 m-0 p-0 bg-secondary border-left">
                 <div class="container overflow-auto">
-                    <div class="row bg-light border-bottom">
+                    <div class="row bg-label border-bottom">
                         <div class="col">
                             <p class="my-0">Layers</p>
                         </div>
@@ -39,7 +39,7 @@
                         </div>
                     </div>
 
-                    <div class="row">
+                    <div class="row anim-layer">
                         <div class="col">
                             
                         </div>
