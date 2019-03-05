@@ -36,6 +36,7 @@
                     <input type="date" class="form-control" name="searchDate">
                 </div>
 
+                <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/forms/preservegetinput.php"); ?>
                 <input type="hidden" name="masterAction" value="searchAnimations">
                 <input type="submit" class="btn btn-success form-control" value="Search">
             </form>
