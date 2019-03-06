@@ -15,8 +15,7 @@
     <?php include_once($_SERVER["DOCUMENT_ROOT"] . "/pages/parts/headers/editorheader.php"); // Header ?>
 
     <!-- Main content -->
-    <div class="container-fluid border-t
-    op border-bottom">
+    <div class="container-fluid border-top border-bottom">
         <div class="row my-0">
             <!-- Canvas -->
             <div id="editor-contentarea" class="col-10  m-0 p-3 overflow-auto">

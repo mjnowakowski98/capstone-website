@@ -37,6 +37,22 @@ addEventListener("load", () => {
             case "render":
                 bufferImage.src = serverMessage.extended.frameData;
                 break;
+
+            case "getChildObjs":
+
+                break;
+
+            case "createObject":
+
+                break;
+
+            case "deleteObject":
+
+                break;
+
+            case "information":
+                console.log(serverMessage.extended.message);
+                break;
     
             default:
                 console.log(serverMessage.action);

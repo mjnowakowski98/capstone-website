@@ -26,3 +26,20 @@
     padding:0;
     float:none;
 }
+
+.marquee:hover {
+    display:inline-block;
+    overflow:hidden;
+    animation: marquee 8s linear infinite;
+    padding-left:100%;
+}
+
+.marquee-container {
+    overflow:hidden;
+    padding-left:0;
+}
+
+@keyframes marquee {
+    0% { transform:translate(0,0); }
+    100% {transform:translate(-100%, 0); }
+}
