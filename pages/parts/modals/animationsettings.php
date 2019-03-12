@@ -45,8 +45,10 @@
         <div class="input-group-prepend">
             <span class="input-group-text">Engine Instance</span>
         </div>
-        <input type="text" class="form-control" value="ws://localhost/">
+        <input type="text" id="settings-engineinstance" class="form-control" value="ws://localhost/">
     </div>
+
+    <button type="button" id="settings-save" class="btn btn-primary">Save</button>
 </div>
 </div>
 </div>

@@ -81,6 +81,7 @@
     <img class="d-none">
 
     <script src="/jsscripts/editor/commanddescriptor.js"></script>
+    <script src="/jsscripts/editor/animobj.js"></script>
     <script src="/jsscripts/editor/editor.js"></script>
     <script>
         function onWindowResize() {

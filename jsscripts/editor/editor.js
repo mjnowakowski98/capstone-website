@@ -7,6 +7,7 @@ let animationKey = null;
 let isRendering = false;
 
 let socket = null;
+let animation = null;
 
 let testComm = document.querySelector(".comm-addlayer");
 testComm.addEventListener("click", () => {
@@ -20,8 +21,12 @@ function updateCanvas() {
     requestAnimationFrame(updateCanvas);
 }
 
-addEventListener("load", () => {
-    socket = new WebSocket("ws://localhost/", "json");
+function updateLayersPanel(root) {
+    
+}
+
+function setSocket(instanceUrl) {
+    socket = new WebSocket(instanceUrl, "json");
     socket.addEventListener("open", () => {
         console.log("Connection opened");
         updateCanvas();
@@ -31,14 +36,14 @@ addEventListener("load", () => {
         let serverMessage = JSON.parse(evt.data);
         switch(serverMessage.action) {
             case "newConnection":
-                animationKey = serverMessage.extended.animationKey;
+                animation = new AnimObj();
                 break;
     
             case "render":
                 bufferImage.src = serverMessage.extended.frameData;
                 break;
 
-            case "getChildObjs":
+            case "getChildren":
 
                 break;
 
@@ -68,4 +73,9 @@ addEventListener("load", () => {
         console.error(err);
         socket.close();
     });
+}
+
+addEventListener("load", () => {
+    let instanceInput = document.querySelector("#settings-engineinstance");
+    setSocket(instanceInput.value);
 });
