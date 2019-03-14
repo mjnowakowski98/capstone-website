@@ -36,7 +36,8 @@ function setSocket(instanceUrl) {
         let serverMessage = JSON.parse(evt.data);
         switch(serverMessage.action) {
             case "newConnection":
-                animation = new AnimObj();
+                console.log(serverMessage.extended.animationKey);
+                animation = new AnimObj(serverMessage.extended.animationKey, "layercontainer");
                 break;
     
             case "render":
